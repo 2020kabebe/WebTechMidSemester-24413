@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Inter:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #edf2f7;
+            color: #1a202c;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .access-card {
+            width: 90%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .access-card h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: "Roboto Slab", serif;
+            color: #1a202c;
+        }
+
+        .form-element {
+            margin-bottom: 20px;
+        }
+
+        .form-element label {
+            display: block;
+            font-size: 18px;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .form-element input,
+        .form-element select {
+            width: 100%;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            outline: none;
+            color: #1a202c;
+        }
+
+        .form-element select {
+            color: #1a202c;
+        }
+
+        .sign-up-btn {
+            background-color: #3182ce;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 14px 0;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .sign-up-btn:hover {
+            background-color: #2b6cb0;
+        }
+
+        .signin-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+
+        .signin-link a {
+            color: #3182ce;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="access-card">
+            <h1>Registration Form</h1>
+            <form action="SignUpServlet" method="post">
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-element">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-element">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" required>
+                </div>
+                <div class="form-element">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option disabled selected>Select your role</option>
+                        <option value="ADMIN">Admin</option>
+                        <option value="TEACHER">Teacher</option>
+                        <option value="STUDENT">Student</option>
+                    </select>
+                </div>
+                <button class="sign-up-btn" type="submit">Sign Up</button>
+            </form>
+            <div class="signin-link">
+                Already have an account? <a href="./login.html">Sign in</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

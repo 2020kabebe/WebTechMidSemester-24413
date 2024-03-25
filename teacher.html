@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher CRUD</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #edf2f7;
+            color: #1a202c;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #1a202c;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a202c;
+            width: 30%;
+            align-self: flex-start;
+        }
+
+        form input[type="text"],
+        form select {
+            width: 65%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #1a202c;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3182ce;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher CRUD</h1>
+
+    <div>
+        <h2>Register Teacher</h2>
+        <form id="createForm" method="post" action="TeacherController">
+            <label>First Name:</label>
+            <input type="text" name="firstName">
+            <label>Last Name:</label>
+            <input type="text" name="lastName">
+            <label>Qualification:</label>
+            <select name="qualification">
+                <option value="MASTERS">Masters</option>
+                <option value="PHD">Phd</option>
+                <option value="PROFESSOR">Professor</option>
+            </select>
+            <label>Course ID:</label>
+            <input type="text" name="courseId">
+            <input type="submit" value="Create">
+        </form>
+    </div>
+
+    <div>
+        <h2>Edit Academic Unit</h2>
+        <form action="UpdateTeacherController">
+            <label>ID:</label>
+            <input type="text" name="teacherId">
+            <label>First Name:</label>
+            <input type="text" name="firstName">
+            <label>Last Name:</label>
+            <input type="text" name="lastName">
+            <label>Qualification:</label>
+            <select name="qualification">
+                <option value="MASTERS">Masters</option>
+                <option value="PHD">Phd</option>
+                <option value="PROFESSOR">Professor</option>
+            </select>
+            <label>Course ID:</label>
+            <input type="text" name="courseId">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+    <div>
+        <h2>Delete Academic Unit</h2>
+        <form action="TeacherController">
+            <label>TEACHER ID:</label>
+            <input type="text" name="teacherId">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>

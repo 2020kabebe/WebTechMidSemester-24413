@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD For Academic Unit</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #edf2f7;
+            color: #1a202c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #1a202c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for forms */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 600px; /* Increased width */
+            display: flex;
+            flex-direction: row; /* Changed to horizontal layout */
+            flex-wrap: wrap; /* Allow wrapping of form elements */
+            align-items: center;
+            justify-content: space-between; /* Distribute elements evenly */
+            margin-bottom: 20px;
+        }
+
+        form h2 {
+            width: 100%; /* Make headings full width */
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a202c;
+            width: 30%; /* Adjust width for labels */
+        }
+
+        form input[type="text"],
+        form select {
+            width: 65%; /* Increased width for input fields */
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #1a202c;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3182ce;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Academic Unit CRUD</h1>
+
+    <form id="createForm" method="post" action="AcademicUnitController">
+        <h2>Register</h2>
+        <label>Name:</label>
+        <input type="text" name="academicUnitName">
+        <label>Type:</label>
+        <select name="academicUnitType">
+            <option value="PROGRAM">Program</option>
+            <option value="FACULTY">Faculty</option>
+            <option value="DEPARTMENT">Department</option>
+        </select>
+        <label>Parent ID:</label>
+        <input type="text" name="parentId">
+        <input type="submit" value="Create">
+    </form>
+
+    <form action="UpdateAcademicUnitController">
+        <h2>Edit</h2>
+        <label>ID:</label>
+        <input type="text" name="academicUnitId">
+        <label>Name:</label>
+        <input type="text" name="academicUnitName">
+        <label>Type:</label>
+        <select name="academicUnitType">
+            <option value="PROGRAM">Program</option>
+            <option value="FACULTY">Faculty</option>
+            <option value="DEPARTMENT">Department</option>
+        </select>
+        <label>Parent Code:</label>
+        <input type="text" name="parentId">
+        <input type="submit" value="Update">
+    </form>
+
+    <form action="AcademicUnitController">
+        <h2>Delete</h2>
+        <label>ID:</label>
+        <input type="text" name="academicUnitId">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT REGISTRATION CRUD</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #edf2f7;
+            color: #1a202c;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2 {
+            color: #1a202c;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a202c;
+            width: 30%;
+            align-self: flex-start;
+        }
+
+        form input[type="text"],
+        form select,
+        form input[type="date"],
+        form input[type="submit"] {
+            width: 65%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #1a202c;
+        }
+
+        form input[type="submit"] {
+            background-color: #3182ce;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD For Student Registration</h1>
+
+    <div>
+        <h2>Add</h2>
+        <form id="createForm" method="post" action="StudentRegistrationController">
+            <label>Student ID:</label>
+            <input type="text" name="studentId">
+            <label>Registration Date:</label>
+            <input type="date" name="registrationDate">
+            <label>Department ID:</label>
+            <input type="text" name="departmentId">
+            <label>Semester ID:</label>
+            <input type="text" name="semesterId">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+
+    <div>
+        <h2>Edit</h2>
+        <form action="UpdateStudentRegistrationController">
+            <label>Registration ID:</label>
+            <input type="text" name="reditrationId">
+            <label>Student ID:</label>
+            <input type="text" name="studentId">
+            <label>Registration Date:</label>
+            <input type="date" name="registrationDate">
+            <label>Department ID:</label>
+            <input type="text" name="departmentId">
+            <label>Semester ID:</label>
+            <input type="text" name="departmentId">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+    <div>
+        <h2>Delete</h2>
+        <form action="StudentRegistrationController">
+            <label>Registration ID:</label>
+            <input type="text" name="reditrationId">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>
